@@ -30,6 +30,10 @@ configurations {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile group: 'io.github.jpenren', name: 'thymeleaf-spring-data-dialect', version: '2.1.1'
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+	compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
 	runtime('com.h2database:h2')
 	compileOnly('org.projectlombok:lombok')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
