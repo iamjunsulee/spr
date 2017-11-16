@@ -1,11 +1,14 @@
 package me.jjunsu.post;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import me.jjunsu.category.Category;
+import me.jjunsu.comment.Comment;
 
 @Data
 @Entity
@@ -28,7 +31,14 @@ public class Post {
 	private PostStatus status;
 
 	private LocalDateTime regDate;
-
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "CATEGORY_ID")
+	private Category category;
+	
+	@OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
+	private List<Comment> comments;
+	
 	Post(){
 	}
 	public Post(Long id){
@@ -51,6 +61,14 @@ public class Post {
 		this.content = content;
 		this.code = code;
 		this.status = status;
+	}
+	
+	public Post(String title, String content, String code, PostStatus status, Category category) {
+	    this.title = title;
+	    this.content = content;
+	    this.code = code;
+	    this.status = status;
+	    this.category = category;
 	}
 }
 
