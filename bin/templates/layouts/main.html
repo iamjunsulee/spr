@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Clean Blog - Contact</title>
+    <title>Clean Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
@@ -35,35 +35,24 @@
 	        <div class="collapse navbar-collapse" id="navbarResponsive">
 		          <ul class="navbar-nav ml-auto">
 			            <li class="nav-item">
-			             	 <a class="nav-link" href="index.html">Home</a>
+			             	 <a class="nav-link" th:href="@{/}">Home</a>
 			            </li>
 			            <li class="nav-item">
-			              	<a class="nav-link" href="about.html">About</a>
+			              	<a class="nav-link" href="/about.html">About</a>
 			            </li>
 			            <li class="nav-item">
-			             	<a class="nav-link" href="post.html">Sample Post</a>
+			             	<a class="nav-link" href="/post.html">Sample Post</a>
 			            </li>
 			            <li class="nav-item">
-			             	 <a class="nav-link" href="contact.html">Contact</a>
+			             	 <a class="nav-link" href="/contact.html">Contact</a>
 			            </li>
 		          </ul>
 	        </div>
 	      </div>
     </nav>
 
-<!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
-	<header class="masthead" style="background-image: url('/img/home-bg.jpg')">
-	    <div class="container">
-	        <div class="row">
-	        	<div class="col-lg-8 col-md-10 mx-auto">
-		            <div class="site-heading">
-		              	<h1>Clean Blog</h1>
-		              	<span class="subheading">A Blog Theme by Start Bootstrap</span>
-		            </div>
-		        </div>
-	        </div>
-	    </div>
+	<!-- Page Header -->
+	<header th:replace="layouts/header :: headerFragment">
 	</header>
 
 	<div layout:fragment="content">
@@ -75,7 +64,7 @@
 	        <div class="row">
 	            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	                <ul class="list-inline text-center">
-	                    <li>
+	                    <li class="list-inline-item">
 	                        <a href="#">
 	                                <span class="fa-stack fa-lg">
 	                                    <i class="fa fa-circle fa-stack-2x"></i>
@@ -83,7 +72,7 @@
 	                                </span>
 	                        </a>
 	                    </li>
-	                    <li>
+	                    <li class="list-inline-item">
 	                        <a href="#">
 	                                <span class="fa-stack fa-lg">
 	                                    <i class="fa fa-circle fa-stack-2x"></i>
@@ -91,7 +80,7 @@
 	                                </span>
 	                        </a>
 	                    </li>
-	                    <li>
+	                    <li class="list-inline-item">
 	                        <a href="#">
 	                                <span class="fa-stack fa-lg">
 	                                    <i class="fa fa-circle fa-stack-2x"></i>
@@ -100,12 +89,13 @@
 	                        </a>
 	                    </li>
 	                </ul>
-	                <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+	                <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
 	            </div>
 	        </div>
 	    </div>
 	</footer>
-<!-- jQuery -->
+	
+	<!-- jQuery -->
 	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
 	
 	<!-- Bootstrap Core JavaScript -->

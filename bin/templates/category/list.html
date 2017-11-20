@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sd="http://www.thymeleaf.org/spring-data"
+      layout:decorator="layouts/main" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Category</title>
+</head>
+
+<body>
+<!-- Main Content -->
+<div class="container" layout:fragment="content">
+    <ul class="pager">
+        <li class="next">
+            <a th:href="@{/categories/new}">write</a>
+        </li>
+    </ul>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="category,index : ${categories.content}">
+            <th scope="row" th:text="${index.count}"></th>
+            <td><a th:text="${category.name}" th:href="@{'/categories/' + ${category.id} + '/edit'}"></a></td>
+            <td th:text="${#temporals.format(category.regDate, 'yyyy-MM-dd')}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

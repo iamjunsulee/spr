@@ -17,6 +17,6 @@ public class IndexController {
 	public String home(Model model, Pageable pageable){
 		model.addAttribute("posts", postRepository.findAll(pageable));
 		//model.addAttribute("message", "hello world");
-		return "index";
+		return "inde¤¼";
 	}
 }
