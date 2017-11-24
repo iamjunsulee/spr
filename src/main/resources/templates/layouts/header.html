@@ -3,13 +3,12 @@
       layout:decorator="layouts/main" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <body>      
 	<!-- Set your background image for this header on the line below. -->
-	<header th:fragment="headerFragment" class="masthead" style="background-image: url('/img/home-bg.jpg')">
+	<header th:fragment="headerFragment" class="intro-header" style="background-image: url('/img/home-bg.jpg')">
 	    <div class="container">
 	        <div class="row">
-	        	<div class="col-lg-8 col-md-10 mx-auto">
+	        	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 		            <div class="site-heading">
-		              	<h1>Clean Blog</h1>
-		              	<span class="subheading">A Blog Theme by Start Bootstrap</span>
+		              	<h1 style="color:#ffffff" th:text="${navSection}">Clean Blog</h1>
 		            </div>
 		        </div>
 	        </div>

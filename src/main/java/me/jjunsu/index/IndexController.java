@@ -6,10 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
+import me.jjunsu.config.Navigation;
+import me.jjunsu.config.Section;
 import me.jjunsu.post.PostRepository;
 
 @Controller
 @RequiredArgsConstructor
+@Navigation(Section.HOME)
 public class IndexController {
 	private final PostRepository postRepository;
 	
@@ -17,6 +20,6 @@ public class IndexController {
 	public String home(Model model, Pageable pageable){
 		model.addAttribute("posts", postRepository.findAll(pageable));
 		//model.addAttribute("message", "hello world");
-		return "inde¤¼";
+		return "index";  
 	}
 }

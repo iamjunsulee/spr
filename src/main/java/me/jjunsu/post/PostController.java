@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.RequiredArgsConstructor;
+import me.jjunsu.config.Navigation;
+import me.jjunsu.config.Section;
 import me.jjunsu.exception.NotFoundException;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/posts")
+@Navigation(Section.POST)
 public class PostController {
 	private final PostService postService;
 	

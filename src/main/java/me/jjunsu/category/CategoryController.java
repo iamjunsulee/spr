@@ -8,10 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
-
+import me.jjunsu.config.Navigation;
+import me.jjunsu.config.Section;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/categories")
+@Navigation(Section.CATEGORY)
 public class CategoryController {
 	private final CategoryService categoryService;
 	

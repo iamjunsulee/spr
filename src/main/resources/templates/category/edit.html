@@ -7,9 +7,7 @@
 <body>
 <!-- Main Content -->
 <div class="container" layout:fragment="content">
-    <form class="form-horizontal" th:action="@{'/categories/'+${id}+'/edit'}"
-          th:object="${categoryDto}" method="post" th:id="category">
-        <fieldset>
+    <form class="form-narrow form-horizontal" th:action="@{'/categories/'+${id}+'/edit'}" th:object="${categoryDto}" method="post" th:id="category">
             <div class="form-group" th:classappend="(${#fields.hasErrors('name')}? ' has-error')">
                 <label class="control-label col-sm-2" for="name">카테코리명</label>
                 <div class="col-sm-8">
@@ -21,9 +19,15 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-danger" th:onclick="'deleteCategory(\''+ ${categoryDto.id} +'\')'">Delete</button>
                 </div>
             </div>
-        </fieldset>
+            <script type="text/javascript" th:inline="javascript">
+            	function deleteCategory(id){
+            		document.getElementById("category").action = "/categories/"+id +"/delete";
+            		document.getElementById("category").submit();
+            	}
+            </script>
     </form>
 </div>
 </body>
