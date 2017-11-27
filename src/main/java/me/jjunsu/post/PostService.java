@@ -24,6 +24,7 @@ public class PostService {
 		oldPost.setContent(post.getContent());
 		oldPost.setCode(post.getCode());
 		oldPost.setTitle(post.getTitle());
+		oldPost.setSubtitle(post.getSubtitle());
 		return oldPost;
 	}
 	public void deletePost(Long id){

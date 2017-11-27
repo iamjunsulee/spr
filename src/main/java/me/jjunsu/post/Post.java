@@ -19,7 +19,9 @@ public class Post {
 
 	@NotNull
 	private String title;
-
+	
+	private String subtitle;
+	
 	@Lob
 	@NotNull
 	private String content;
@@ -44,27 +46,31 @@ public class Post {
 	public Post(Long id){
 		this.id = id;
 	}
-	public Post(String title, PostStatus status){
+	public Post(String title, String subtitle, PostStatus status){
 		this.title = title;
+		this.subtitle = subtitle;
 		this.status = status;
 	}
-	public Post(Long id, String title, String content, String code, PostStatus status){
+	public Post(Long id, String title, String subtitle, String content, String code, PostStatus status){
 		this.id = id;
 		this.title = title;
+		this.subtitle = subtitle;
 		this.content = content;
 		this.code = code;
 		this.status = status;
 	}
 
-	public Post(String title, String content, String code, PostStatus status){
+	public Post(String title, String subtitle, String content, String code, PostStatus status){
 		this.title = title;
+		this.subtitle = subtitle;
 		this.content = content;
 		this.code = code;
 		this.status = status;
 	}
 	
-	public Post(String title, String content, String code, PostStatus status, Category category) {
+	public Post(String title, String subtitle, String content, String code, PostStatus status, Category category) {
 	    this.title = title;
+	    this.subtitle = subtitle; 
 	    this.content = content;
 	    this.code = code;
 	    this.status = status;

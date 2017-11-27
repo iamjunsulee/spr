@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Clean Blog - Contact</title>
+    <title>Clean Blog</title>
 </head>
 <body>
 <!-- Main Content -->
@@ -20,6 +20,8 @@
                     <a th:href="@{'/posts/' + ${post.id}}">
                         <h2 class="post-title" th:text="${post.title}">
                         </h2>
+                        <h3 class="post-subtitle" th:text="${post.subtitle}">
+                        </h3>
                     </a>
                     <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> <strong th:text="${#temporals.format(post.regDate, 'yyyy-MM-dd')}"> </strong> <a th:href="@{/categories}">category</a> <strong th:text="${post.category.name}"></strong></p>
                 </div>

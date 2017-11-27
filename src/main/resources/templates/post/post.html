@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-
+	<link rel="stylesheet" th:href="@{/markdown/css/github-gist.css}" />
     <title>Post</title>
 
 </head>
@@ -16,11 +16,20 @@
 <body>
     <div class="container" layout:fragment="content">
         <div class="row">
-            <h1 class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="margin-bottom:3%" th:text="${post.title}">
-            </h1>
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" th:utext="${post.content}">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            	<div class="post-heading">
+			      	<h1 th:utext="${post.title}"></h1>
+			      	<h2 class="subheading" th:utext="${post.subtitle}" style="margin-bottom:3%"></h2>
+			  	</div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" th:utext="${post.content}">
             </div>
         </div>
+        <form class="form-narrow form-horizontal" th:action="@{'/posts/'+${id}+'/delete'}" th:object="${postDto}" method="post" th:id="post">
+	        <div class="pull-right">
+				<button type="submit" onclick="if(!confirm('삭제하시겠습니까?')){return false;}" class="btn btn-danger">Delete</button>
+			</div>
+		</form>
     </div>
 </body>
 
