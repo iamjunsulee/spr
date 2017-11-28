@@ -63,13 +63,13 @@
             <input type="hidden" id="content" name="content" th:field="*{content}"/>
             <input type="hidden" id="code" th:field="*{code}" />
         </div>
-        <div id="out" >
+        <div id="out" style="margin-top:5%">
         </div>
         <div id="messageContent">
             <label for="content" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></label>
         </div>
         <div id="menu">
-            <input class="btn btn-primary" type="button" value="Submit" onclick="saveAsHtml()"/>
+            <input class="btn btn-primary" type="button" value="WRITE" onclick="saveAsHtml()"/>
         </div>
     </fieldset>
 </form>

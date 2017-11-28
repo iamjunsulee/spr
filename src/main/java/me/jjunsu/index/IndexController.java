@@ -21,12 +21,12 @@ import static org.springframework.data.domain.ExampleMatcher.matching;
 
 @Controller
 @RequiredArgsConstructor
-@Navigation(Section.HOME)
+@Navigation(Section.HOME) 
 public class IndexController {
 	private final PostRepository postRepository;
 	
 	@GetMapping("/")
-	public String home(@RequestParam(required = false) String q,String q2, Model model, @PageableDefault(size = 5, sort = "regDate", direction = Sort.Direction.DESC) Pageable pageable){
+	public String home(@RequestParam(required = false) String q,String q2, Model model, @PageableDefault(size = 2, sort = "regDate", direction = Sort.Direction.DESC) Pageable pageable){
 		Example<Post> post = Example.of(new Post(q,q2, PostStatus.Y),
 	      matching()
 	        .withMatcher("title", ExampleMatcher.GenericPropertyMatcher::contains));

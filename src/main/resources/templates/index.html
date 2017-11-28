@@ -18,15 +18,23 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview" th:each="post : ${posts.content}">
                     <a th:href="@{'/posts/' + ${post.id}}">
-                        <h2 class="post-title" th:text="${post.title}">
-                        </h2>
-                        <h3 class="post-subtitle" th:text="${post.subtitle}">
-                        </h3>
+                        <h2 class="post-title" th:text="${post.title}"></h2>
+                        <h3 class="post-subtitle" th:text="${post.subtitle}"></h3>
                     </a>
                     <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> <strong th:text="${#temporals.format(post.regDate, 'yyyy-MM-dd')}"> </strong> <a th:href="@{/categories}">category</a> <strong th:text="${post.category.name}"></strong></p>
                 </div>
             </div>
         </div>
+        <div class="row">
+        	<ul class="pager">
+			    <li th:if="${!posts.first}" class="previous">
+			        <a th:href="@{'?page='+${posts.number-1}}">&larr; 다음글</a>
+			    </li>
+			    <li th:if = "${!posts.last}" class="next">
+			        <a th:href="@{'?page='+${posts.number+1}}">이전글 &rarr;</a>
+			    </li>
+			</ul>
+        </div> 
     </div>
 </body>
 </html>
